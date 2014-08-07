@@ -1,0 +1,4 @@
+highlight PdbCurrentLine guibg=DarkGreen ctermbg=Blue
+highlight PdbBreakpoint guibg=DarkRed ctermbg=DarkRed
+highlight PdbConditionalBreakpoint guibg=Purple ctermbg=Magenta
+highlight PdbTemporaryBreakpoint guibg=SlateBlue ctermbg=LightBlue
