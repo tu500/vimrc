@@ -435,6 +435,13 @@ set cc=101                       " visual bar at 101th column
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+" Disable tex conceal
+" A broken, new feature that just happened to be activated by default upon an
+" update and which you can't find anything about unless you know what you are
+" looking for.
+" Did anybody ever test it? I mean, beyond checking if it `looks` right?
+let g:tex_conceal = ""
+
 
 """ History, Backup, undo """
 set history=10000
