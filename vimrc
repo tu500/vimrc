@@ -83,6 +83,10 @@ Bundle 'gmarik/vundle'
 " PLUGIN SECTION "
 """"""""""""""""""
 
+""" Leader """
+let mapleader = ","
+let maplocalleader = ","
+
 " PLUGIN: airline "
 set laststatus=2
 let g:airline_powerline_fonts = 1
@@ -121,6 +125,12 @@ nnoremap <Leader>a/ :Tabularize /\/\/<CR>
 vnoremap <Leader>a/ :Tabularize /\/\/<CR>
 nnoremap <Leader>a} :Tabularize /[{}]<CR>
 vnoremap <Leader>a} :Tabularize /[{}]<CR>
+"single spaces:
+nnoremap <Leader>as :Tabularize /\S\+/l1l0<CR>
+vnoremap <Leader>as :Tabularize /\S\+/l1l0<CR>
+"comma delimited fields
+nnoremap <Leader>a, :Tabularize /, *\zs[^ ]/l1l0<CR>
+vnoremap <Leader>a, :Tabularize /, *\zs[^ ]/l1l0<CR>
 "endif
 
 " call tabularize every time you type '|'
@@ -154,7 +164,8 @@ Bundle 'vim-scripts/TaskList.vim.git'
 
 " PLUGIN: gundo "
 "nnoremap <F5> :GundoToggle<CR>
-nnoremap <leader>g :GundoToggle<CR>
+"nnoremap <leader>g :GundoToggle<CR>
+nnoremap \g :GundoToggle<CR>
 "settings (defaults)
 "let g:gundo_width = 45
 "let g:gundo_preview_height = 15
@@ -396,8 +407,10 @@ set autoindent
 set encoding=utf-8      " standard encoding is utf-8
 scriptencoding utf-8
 
-if !has('gui')
-    set term=$TERM      " Make arrow and other keys work
+if !has('nvim')
+  if !has('gui')
+      set term=$TERM      " Make arrow and other keys work
+  endif
 endif
 
 """ Leader """
@@ -469,6 +482,7 @@ set nojoinspaces        " Prevents inserting two spaces after punctuation on a j
 set matchpairs+=<:>     " Match, to be used with %
 
 "set mouse=a             " Automatically enable mouse usage
+set mouse=               " Automatically enable mouse usage
 set hidden              " allow to switch buffers without saving
 
 set wildmenu            " Completion for :Ex mode. Show list instead of just completing
