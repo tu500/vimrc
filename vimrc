@@ -66,7 +66,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 
 " Brief help
@@ -76,7 +76,7 @@ Bundle 'gmarik/vundle'
 " :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.
+" NOTE: comments after Plugin commands are not allowed.
 
 
 """"""""""""""""""
@@ -110,7 +110,7 @@ let g:airline_mode_map = {
     \ '' : 'S',
     \ }
 "let g:airline_theme="powerlineish"
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 " PLUGIN: tabular "
 " TODO: fix this if...
@@ -146,21 +146,21 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
-Bundle 'godlygeek/tabular.git'
+Plugin 'godlygeek/tabular.git'
 
 " PLUGIN: ultisnips "
 "let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-Bundle 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine.
-Bundle 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 " PLUGIN: tasklist "
 noremap <leader>td <Plug>TaskList
-Bundle 'vim-scripts/TaskList.vim.git'
+Plugin 'vim-scripts/TaskList.vim.git'
 
 " PLUGIN: gundo "
 "nnoremap <F5> :GundoToggle<CR>
@@ -174,18 +174,18 @@ nnoremap \g :GundoToggle<CR>
 "let g:gundo_help = 1             "show help
 "let g:undo_disable = 0           "disable for multiuse vimrc
 "let g:undo_close_on_revert = 0   "close window on <CR>
-Bundle 'sjl/gundo.vim.git'
+Plugin 'sjl/gundo.vim.git'
 
 " PLUGIN: nerdtree
 noremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeHighlightCursorline=1
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " PLUGIN: ack "
 nnoremap <leader>Ack <Esc>:Ack!
 nnoremap <leader>Aw :Ack! -Ri '<cword>(C'<CR>
-Bundle 'mileszs/ack.vim.git'
+Plugin 'mileszs/ack.vim.git'
 
 " PLUGIN: YouCompleteMe
 nnoremap <leader>yd :YcmCompleter GoToDefinitionElseDeclaration<cr>
@@ -197,32 +197,32 @@ let g:ycm_complete_in_strings=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:syntastic_always_populate_loc_list=1
 "let g:ycm_autoclose_preview_window_after_insertion = 1
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " PLUGIN: speeddating
-Bundle 'tpope/vim-speeddating.git'
+Plugin 'tpope/vim-speeddating.git'
 
 " PLUGIN: abolish
-Bundle 'tpope/vim-abolish.git'
+Plugin 'tpope/vim-abolish.git'
 
 " PLUGIN: i3 syntax
-Bundle 'PotatoesMaster/i3-vim-syntax'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 
 " PLUGIN: git syntax
-Bundle 'tpope/vim-git.git'
+Plugin 'tpope/vim-git.git'
 
 " PLUGIN: capslock
 " software capslock
-Bundle 'tpope/vim-capslock.git'
+Plugin 'tpope/vim-capslock.git'
 
 " PLUGIN: fugitive
 command! Gpush Git push
 command! Gpull Git pull
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " PLUGIN: syntastic
 " syntax checking, linewise error icons
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " PLUGIN: Rainbow Parantheses
 " color matching parantheses
@@ -230,37 +230,37 @@ au VimEnter * RainbowParenthesesToggle
 au VimEnter * RainbowParenthesesLoadRound
 au VimEnter * RainbowParenthesesLoadSquare
 au VimEnter * RainbowParenthesesLoadBraces
-Bundle 'kien/rainbow_parentheses.vim'
+Plugin 'kien/rainbow_parentheses.vim'
 
 " PLUGIN: Recover
 " better interface when .swp file was found
-Bundle 'chrisbra/Recover.vim'
+Plugin 'chrisbra/Recover.vim'
 
 " PLUGIN: IndentLine
 " Indent Guides with Conceal
 let g:indentLine_char = '¦'
 let g:indentLine_color_term = 239
 " other lines: ┆ ¦ │
-Bundle 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
 
 " PLUGIN: DelimitMate
 " automaticall add closing parentheses
 " TODO: conflicts with repeat actions
 let delimitMate_quotes = "\" ' `"
 let delimitMate_matchpairs = "(:),[:],{:}"
-Bundle "Raimondi/delimitMate"
+Plugin "Raimondi/delimitMate"
 
 " PLUGIN: Repeat
 " Make actions of some plugins repeatable
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 
 " PLUGIN: Sleuth
 " Detects and sets indentation
-Bundle 'tpope/vim-sleuth'
+Plugin 'tpope/vim-sleuth'
 
 " PLUGIN: NerdCommenter
-"Bundle 'scrooloose/nerdcommenter'
-Bundle 'tomtom/tcomment_vim'
+"Plugin 'scrooloose/nerdcommenter'
+Plugin 'tomtom/tcomment_vim'
 
 " PLUGIN: Surround
 " Surround stuff with braces or XML tags or delete/replace
@@ -273,34 +273,34 @@ function! DeleteBrackets()
 endfunction
 
 nnoremap dss :call DeleteBrackets()<CR>
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 " PLUGIN: Vim Colors
 " Colorschemes
-Bundle 'spf13/vim-colors'
+Plugin 'spf13/vim-colors'
 
 " PLUGIN: TagBar
 nnoremap <leader>tb :TagbarToggle<CR>
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 
 " PLUGIN: Easymotion
 "let g:EasyMotion_leader_key = '<Leader>'
 let g:EasyMotion_leader_key = '<Leader><Leader>'
 "let g:EasyMotion_smartcase = 1
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 
 " PLUGIN: MatchTagAlways and matchit
 " This highlights enclosing/matching tags in HTML and XML
-Bundle 'Valloric/MatchTagAlways'
+Plugin 'Valloric/MatchTagAlways'
 " This allows % to jump between open and closing tags
-Bundle 'matchit.zip'
+Plugin 'matchit.zip'
 
 " PLUGIN: CSV
-Bundle 'chrisbra/csv.vim'
+Plugin 'chrisbra/csv.vim'
 
 " PLUGIN: Signify
 " symbols for modified, added, deleted lines (version control)
-Bundle 'mhinz/vim-signify'
+Plugin 'mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
 let g:signify_mapping_next_hunk = '<leader>gj'
 let g:signify_mapping_prev_hunk = '<leader>gk'
@@ -309,7 +309,7 @@ let g:signify_mapping_prev_hunk = '<leader>gk'
 " PLUGIN: Colorscheme Approximation
 " This transforms colorschemes to terminal colorschemes
 " The ctermbg=NONE hooks make backgrounds transparent in terminals
-Bundle 'godlygeek/csapprox'
+Plugin 'godlygeek/csapprox'
 let g:CSApprox_hook_post = [
             \ 'highlight Normal ctermbg=NONE ctermfg=NONE',
             \ 'highlight LineNr ctermbg=NONE ctermfg=NONE',
@@ -333,7 +333,7 @@ let g:ctrlp_custom_ignore = {
 \ 'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
 \ 'file': '\.exe$\|\.so$\|\.dat$'
 \ }
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 
 """"""""""""""""""
@@ -346,27 +346,27 @@ Bundle 'kien/ctrlp.vim'
 "let g:LatexBox_quickfix = 2
 "let g:LatexBox_latexmk_options = '-lualatex'
 "let g:LatexBox_Folding = 1
-"Bundle 'LaTeX-Box-Team/LaTeX-Box'
+"Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " PLUGIN: Easyclip
 " Delete commands don't yank any more
 " visual paste does not yank any more
 " new "m" command
-"Bundle 'svermeulen/vim-easyclip'
+"Plugin 'svermeulen/vim-easyclip'
 
 " PLUGIN: Conceal Plugins
-"Bundle 'tyok/js-mask'
-"Bundle 'ehamberg/vim-cute-python'
+"Plugin 'tyok/js-mask'
+"Plugin 'ehamberg/vim-cute-python'
 
 " PLUGIN: Session Manager
-"Bundle 'vim-scripts/sessionman.vim'
+"Plugin 'vim-scripts/sessionman.vim'
 
 " PLUGIN: CoffeeScript
-"Bundle 'kchmck/vim-coffee-script'
+"Plugin 'kchmck/vim-coffee-script'
 
 " PLUGIN: Tern for Vim
 " javascript editing
-"Bundle 'marijnh/tern_for_vim'
+"Plugin 'marijnh/tern_for_vim'
 
 " LEGACY:
 
