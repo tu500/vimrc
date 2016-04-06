@@ -37,6 +37,7 @@
 "       Signify
 "       Colorscheme Approximation
 "       Ctrl + P
+"       rust
 "
 " UNUSED:
 "
@@ -334,6 +335,9 @@ let g:ctrlp_custom_ignore = {
 \ 'file': '\.exe$\|\.so$\|\.dat$'
 \ }
 Plugin 'kien/ctrlp.vim'
+
+" PLUGIN: Rust support
+Plugin 'rust-lang/rust.vim'
 
 
 """"""""""""""""""
