@@ -249,7 +249,7 @@ Plugin 'Yggdroot/indentLine'
 " TODO: conflicts with repeat actions
 let delimitMate_quotes = "\" ' `"
 let delimitMate_matchpairs = "(:),[:],{:}"
-Plugin "Raimondi/delimitMate"
+Plugin 'Raimondi/delimitMate'
 
 " PLUGIN: Repeat
 " Make actions of some plugins repeatable
